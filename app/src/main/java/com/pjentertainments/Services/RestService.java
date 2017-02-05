@@ -1,5 +1,6 @@
 package com.pjentertainments.Services;
 
+import com.pjentertainments.Models.Location;
 import com.pjentertainments.Models.Media;
 import com.pjentertainments.Models.Post;
 import com.pjentertainments.Models.User;
@@ -25,7 +26,7 @@ public interface RestService {
     @GET("/posts/{post_id}")
     void getPostAsync(@Path("post_id") int post_id, Callback<Post> callback); // Async
 
-    @GET("/media?")
+    @GET("/media")
     void getImageAsync(@Query("parent") int parent_id, Callback<List<Media>> callback); // Async
 
     @GET("/media/{media_id}")
@@ -33,5 +34,8 @@ public interface RestService {
 
     @GET("/users/{user_id}")
     void getUserAsync(@Path("user_id") int user_id, Callback<User> callback); // Async
+
+    @GET("/location")
+    void getLocationAsync(@Query("parent") int parent_id, Callback<List<Location>> callback); // Async
 
 }
