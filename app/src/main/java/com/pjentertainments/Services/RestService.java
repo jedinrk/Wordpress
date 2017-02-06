@@ -2,6 +2,7 @@ package com.pjentertainments.Services;
 
 import com.pjentertainments.Models.Location;
 import com.pjentertainments.Models.Media;
+import com.pjentertainments.Models.Movie;
 import com.pjentertainments.Models.Post;
 import com.pjentertainments.Models.User;
 
@@ -36,6 +37,12 @@ public interface RestService {
     void getUserAsync(@Path("user_id") int user_id, Callback<User> callback); // Async
 
     @GET("/location")
-    void getLocationAsync(@Query("parent") int parent_id, Callback<List<Location>> callback); // Async
+    void getLocationAsync(@Query("id") int id, Callback<List<Location>> callback); // Async
+
+    @GET("/location")
+    void getCountryAsync(@Query("parent") int parent_id, Callback<List<Location>> callback); // Async
+
+    @GET("/movie")
+    void getMovieAsync(@Query("location") List<Integer> location_id, Callback<List<Movie>> callback); // Async
 
 }
