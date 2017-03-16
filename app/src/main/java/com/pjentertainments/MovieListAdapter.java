@@ -80,7 +80,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.View
         final Context ctxt = this.context; // Save the context locally
         final Movie currentMovie = this.movie.get(i);
 
-        if ( i == 0 ) {
+        /*if ( i == 0 ) {
             // Restore preferences
             SharedPreferences settings = ctxt.getSharedPreferences("myShare", Context.MODE_PRIVATE);
             int last_post_id = settings.getInt("last_post_id", 0);
@@ -93,7 +93,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.View
                 // Commit the edits!
                 editor.apply();
 
-                if ( last_post_id != 0 ) {
+                *//*if ( last_post_id != 0 ) {
                     // Push notification goes here
                     NotificationCompat.Builder mBuilder =
                             new NotificationCompat.Builder(context)
@@ -106,10 +106,10 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.View
                             (NotificationManager) context.getSystemService(context.NOTIFICATION_SERVICE);
                     // Builds the notification and issues it.
                     mNotifyMgr.notify(mNotificationId, mBuilder.build());
-                }
+                }*//*
 
             }
-        }
+        }*/
 
         holder.postTitle.setText( currentMovie.getTitle().getRendered() );
 

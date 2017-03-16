@@ -42,6 +42,9 @@ public interface RestService {
     @GET("/location")
     void getCountryAsync(@Query("parent") int parent_id, Callback<List<Location>> callback); // Async
 
+    @GET("/location")
+    void getCityAsync(@Query("search") String cityName, Callback<List<Location>> callback); // Async
+
     @GET("/movie")
     void getMovieAsync(@Query("location") List<Integer> location_id, Callback<List<Movie>> callback); // Async
 
